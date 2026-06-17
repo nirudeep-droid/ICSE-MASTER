@@ -34,14 +34,15 @@
     "dotenv": "^16.6.1",
     "drizzle-orm": "^0.44.7",
     "expo": "~54.0.29",
-    "expo-audio": "~1.1.0",
-    "expo-build-properties": "^1.0.10",
-    "expo-constants": "~18.0.12",
-    "expo-document-picker": "~14.0.8",
-    "expo-font": "~14.0.10",
-    "expo-haptics": "~15.0.8",
-    "expo-image": "~3.0.11",
-    "expo-keep-awake": "~15.0.8",
+      "scripts": {
+    "start": "concurrently \"npm run server\" \"react-scripts start\"",
+    "server": "NODE_ENV=development tsx watch server/_core/index.ts",
+    "build": "react-scripts build && npm run build:server",
+    "build:server": "esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+
     "expo-linking": "~8.0.10",
     "expo-notifications": "~0.32.15",
     "expo-router": "~6.0.19",
