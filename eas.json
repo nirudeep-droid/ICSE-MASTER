@@ -1,0 +1,66 @@
+{
+  "cli": {
+    "version": ">= 12.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "ndk": "25.1.8937393",
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "ndk": "25.1.8937393",
+        "gradleCommand": ":app:assembleRelease",
+        "env": {
+          "ORG_GRADLE_PROJECT_android_useAndroidX": "true",
+          "ORG_GRADLE_PROJECT_android_enableJetifier": "true",
+          "ORG_GRADLE_PROJECT_android_compileSdkVersion": "34",
+          "ORG_GRADLE_PROJECT_android_targetSdkVersion": "34",
+          "ORG_GRADLE_PROJECT_android_minSdkVersion": "24"
+        }
+      },
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://icseapp-9ukc7csh.manus.space",
+        "EXPO_PUBLIC_OAUTH_PORTAL_URL": "https://manus.im",
+        "EXPO_PUBLIC_OAUTH_SERVER_URL": "https://api.manus.im",
+        "EXPO_PUBLIC_APP_ID": "9UKC7CsHaLZKduqqpfDnya",
+        "EXPO_PUBLIC_OWNER_OPEN_ID": "ho4HUTD5r3hqNTR3Som5HK",
+        "EXPO_PUBLIC_OWNER_NAME": "Vriti"
+      }
+    },
+    "production": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "ndk": "25.1.8937393",
+        "gradleCommand": ":app:assembleRelease",
+        "env": {
+          "ORG_GRADLE_PROJECT_android_useAndroidX": "true",
+          "ORG_GRADLE_PROJECT_android_enableJetifier": "true",
+          "ORG_GRADLE_PROJECT_android_compileSdkVersion": "34",
+          "ORG_GRADLE_PROJECT_android_targetSdkVersion": "34",
+          "ORG_GRADLE_PROJECT_android_minSdkVersion": "24"
+        }
+      },
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://icseapp-9ukc7csh.manus.space",
+        "EXPO_PUBLIC_OAUTH_PORTAL_URL": "https://manus.im",
+        "EXPO_PUBLIC_OAUTH_SERVER_URL": "https://api.manus.im",
+        "EXPO_PUBLIC_APP_ID": "9UKC7CsHaLZKduqqpfDnya",
+        "EXPO_PUBLIC_OWNER_OPEN_ID": "ho4HUTD5r3hqNTR3Som5HK",
+        "EXPO_PUBLIC_OWNER_NAME": "Vriti"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
